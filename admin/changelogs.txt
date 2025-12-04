@@ -1,0 +1,63 @@
+NOTE:
+code for database errors
+
+die('code: '. $connect->errno .' error: '. $connect->error);
+
+Website to look at for live chats
+1. http://www.phpzag.com/build-live-chat-system-with-ajax-php-mysql/
+
+
+-- database changes --
+** CREATED TABLES
+  - granted_roles
+  - employee_roles
+  - partner_budget
+
+** DEFAULT DATA FOR employee_roles
+
+** ALTERS
+  - partner_employees: remove role column
+  - borrowers : add blacklist column
+              : add habitual borrowers column
+
+  - partners : add logo + logo_stretched column;
+
+** TRIGGERS
+  loan_accounts_update_trig
+  repayments_insert_trig
+
+library folders {
+  css
+  img
+  lib
+}
+
+-- file changes --
+-- apply changes after solidifying file upload
+./partner/includes/functions.php
+
+-- apply changes after solidifying file upload
+./partner/financial_details.php
+./partner/add_client.php
+./partner/profile.php
+./partner/proc_form.php
+--
+
+./partner/edit_branch.php
+./partner/proc_form.php
+./partner/branches.php
+
+
+ADMIN changes (invoice in pdf){
+./invoice_view.php
+./print_invoice.php
+}
+
+MIGRATION changes {
+./admin/auth.php
+./partner/proc_form.php
+./partner/includes/header.php
+./partner/includes/footer.php
+./partner/includes/sidebar.php
+./partner/logout.php
+}
